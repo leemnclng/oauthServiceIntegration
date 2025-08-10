@@ -149,6 +149,7 @@ app.get('/api/auth', (req, res) => {
     response_type: 'code',
     state: generateRandomState()
   });
+  console.log("datas: ", CONFIG.CLIENT_ID, CONFIG.REDIRECT_URI);
 
   const authUrl = `https://www.facebook.com/v23.0/dialog/oauth?${params}`;
   res.redirect(authUrl);
