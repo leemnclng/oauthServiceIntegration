@@ -12,7 +12,7 @@ app.use(express.json());
 const CONFIG = {
   CLIENT_ID: process.env.META_APP_ID,
   CLIENT_SECRET: process.env.META_APP_SECRET,
-  REDIRECT_URI: process.env.REDIRECT_URI || 'https://oauth-service-integration-1kt93ba30-leemnclngs-projects.vercel.app',
+  REDIRECT_URI: process.env.REDIRECT_URI || 'https://oauth-service-integration.vercel.app',
   SCOPES: [
     'public_profile',
     'email',
@@ -170,7 +170,7 @@ app.get('/api/callback', async (req, res) => {
       params: {
         client_id: CONFIG.CLIENT_ID,
         client_secret: CONFIG.CLIENT_SECRET,
-        redirect_uri: CONFIG.REDIRECT_URI,
+        // redirect_uri: CONFIG.REDIRECT_URI,
         code
       }
     });
